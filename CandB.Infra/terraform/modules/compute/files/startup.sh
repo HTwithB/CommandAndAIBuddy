@@ -58,6 +58,13 @@ http {
             add_header Content-Disposition 'attachment; filename="candb.zip"';
         }
 
+        location = /windows/download {
+            proxy_pass https://storage.googleapis.com/candb-473008-game-bucket/windows/candb.zip;
+            proxy_set_header Host storage.googleapis.com;
+            proxy_ssl_server_name on;
+            add_header Content-Disposition 'attachment; filename="candb.zip"';
+        }
+
         location = /mac {
             proxy_pass https://storage.googleapis.com/candb-473008-game-bucket/mac/installer.pkg;
             proxy_set_header Host storage.googleapis.com;
