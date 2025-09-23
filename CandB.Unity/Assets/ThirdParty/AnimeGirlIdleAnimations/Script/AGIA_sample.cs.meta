@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e38594ec77d5cdc4688a6e68d2b4d269
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 150397
+  packageName: Anime Girl Idle Animations
+  packageVersion: 1.2.1
+  assetPath: Assets/AnimeGirlIdleAnimations/Script/AGIA_sample.cs
+  uploadId: 440789

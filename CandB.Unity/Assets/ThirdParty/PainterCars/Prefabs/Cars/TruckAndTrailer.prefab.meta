@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 624fb93955aae9d44b88ab6948fb3afe
+timeCreated: 1509953474
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 106648
+  packageName: Lowpoly painter cars
+  packageVersion: 1.0
+  assetPath: Assets/PainterCars/Prefabs/Cars/TruckAndTrailer.prefab
+  uploadId: 390993

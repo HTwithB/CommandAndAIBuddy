@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 171019f069a0cf84f963f7fa2464196e
+timeCreated: 1509169870
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 106648
+  packageName: Lowpoly painter cars
+  packageVersion: 1.0
+  assetPath: Assets/PainterCars/Materials/Cars/MuscleCar1/MuscleCar1_White.mat
+  uploadId: 390993

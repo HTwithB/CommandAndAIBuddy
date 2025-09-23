@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 9c48be62fa9178d4aa2702466e7ca60b
+timeCreated: 1508569383
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 106648
+  packageName: Lowpoly painter cars
+  packageVersion: 1.0
+  assetPath: Assets/PainterCars/Prefabs/Cars/MuscleCar1.prefab
+  uploadId: 390993

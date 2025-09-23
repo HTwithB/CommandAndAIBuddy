@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 0c15dc8c7e2c3e64da941c5f677b2682
+timeCreated: 1509947931
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 106648
+  packageName: Lowpoly painter cars
+  packageVersion: 1.0
+  assetPath: Assets/PainterCars/Scripts/Car/DoubleTransformObject.cs
+  uploadId: 390993

@@ -1,0 +1,22 @@
+{
+    "name": "CandB.Application",
+    "rootNamespace": "CandB",
+    "references": [
+        "CandB.Controller",
+        "CandB.Core",
+        "CandB.Gateway",
+        "CandB.View",
+        "undream.llmunity.Runtime",
+        "VContainer",
+        "AudioManager"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

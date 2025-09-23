@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: b796f04a9b9dcdf42a55a53c616e9ac5
+timeCreated: 1509552090
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 106648
+  packageName: Lowpoly painter cars
+  packageVersion: 1.0
+  assetPath: Assets/PainterCars/Materials/Cars/SchoolBus.mat
+  uploadId: 390993

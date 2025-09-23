@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 78fbdc1cee9117f40bd9bf4f96b51a77
+timeCreated: 1509869107
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 106648
+  packageName: Lowpoly painter cars
+  packageVersion: 1.0
+  assetPath: Assets/PainterCars/Prefabs/Cars/FireTruck.prefab
+  uploadId: 390993

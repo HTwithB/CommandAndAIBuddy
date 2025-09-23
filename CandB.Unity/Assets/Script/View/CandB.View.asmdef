@@ -1,0 +1,29 @@
+{
+  "name": "CandB.View",
+  "rootNamespace": "CandB",
+  "references": [
+    "CandB.Core",
+    "VContainer",
+    "R3.Unity",
+    "Febucci.TextAnimator.Runtime",
+    "Febucci.TextAnimator.TMP.Runtime",
+    "Febucci.Attributes.Runtime",
+    "Unity.TextMeshPro",
+    "UniTask.DOTween",
+    "UniTask",
+    "DOTweenPro.Scripts",
+    "DOTween.Modules"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [
+    "DOTween.dll",
+    "DOTweenPro.dll"
+  ],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5e5bcea2153e31f4eac26f2ea85dfe35
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 150397
+  packageName: Anime Girl Idle Animations
+  packageVersion: 1.2.1
+  assetPath: Assets/AnimeGirlIdleAnimations/Animator/AGIA_animator.controller
+  uploadId: 440789

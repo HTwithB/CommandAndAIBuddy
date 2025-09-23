@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 0ed50dde8db5be741a767aa2b957046d
+timeCreated: 1509866288
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 106648
+  packageName: Lowpoly painter cars
+  packageVersion: 1.0
+  assetPath: Assets/PainterCars/Prefabs/Cars/PickUp1.prefab
+  uploadId: 390993

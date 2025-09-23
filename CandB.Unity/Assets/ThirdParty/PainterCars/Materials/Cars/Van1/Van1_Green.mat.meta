@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 3d2ae658ac2d4f64da610b7384cd6568
+timeCreated: 1509381277
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 106648
+  packageName: Lowpoly painter cars
+  packageVersion: 1.0
+  assetPath: Assets/PainterCars/Materials/Cars/Van1/Van1_Green.mat
+  uploadId: 390993

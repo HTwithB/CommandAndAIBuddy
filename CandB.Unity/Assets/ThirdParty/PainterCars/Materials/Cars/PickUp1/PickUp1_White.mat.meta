@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: db736c959300dc348abab6cf246accf0
+timeCreated: 1509169870
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 106648
+  packageName: Lowpoly painter cars
+  packageVersion: 1.0
+  assetPath: Assets/PainterCars/Materials/Cars/PickUp1/PickUp1_White.mat
+  uploadId: 390993

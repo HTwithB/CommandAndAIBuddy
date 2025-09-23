@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: e81c88913a13e8d4dbd1089dac08203f
+timeCreated: 1509179228
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 106648
+  packageName: Lowpoly painter cars
+  packageVersion: 1.0
+  assetPath: Assets/PainterCars/Materials/Cars/Alarm.mat
+  uploadId: 390993
