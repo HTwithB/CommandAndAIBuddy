@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using CandB.Script.Gateway;
 using Cysharp.Threading.Tasks;
 using R3;
+using UnityEngine;
 
 namespace CandB.Script.Core
 {
@@ -51,7 +52,7 @@ namespace CandB.Script.Core
             if (TryLookShelf()) result.Add(DoneAction.TriedLookShelf);
             if (TryLookKeyBox()) result.Add(DoneAction.TriedLookKeyBox);
             if (await TryOpenCarDoor()) result.Add(DoneAction.TriedOpenCarDoor);
-            if (TryOpenCageDoor()) result.Add(DoneAction.TriedOpenCageDoor);
+            if (await TryOpenCageDoor()) result.Add(DoneAction.TriedOpenCageDoor);
 
             return result;
 
@@ -184,7 +185,7 @@ namespace CandB.Script.Core
                 return false;
             }
 
-            bool TryOpenCageDoor()
+            async UniTask<bool> TryOpenCageDoor()
             {
                 if (_environment.Achievement.CurrentValue.WasBuddyEscapedFromCage) return false;
                 if (_environment.Stage.CurrentValue.BuddyPosition != new Position(3, 8)) return false;
@@ -195,6 +196,12 @@ namespace CandB.Script.Core
                     _environment.EscapeFromCage();
                     _environment.PlaySound(SoundEffectId.UnlockKey);
                     _actionLogSubject.OnNext("檻の鍵が開きました。脱出しましょう！");
+                    await UniTask.WaitForSeconds(2.0f);
+                    _environment.OpenWhiteCurtain();
+                    // Unityを終了する
+                    
+                    await UniTask.WaitForSeconds(5.0f);
+                    Application.Quit(0);
                 }
                 else
                 {

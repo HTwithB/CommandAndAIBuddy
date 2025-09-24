@@ -28,6 +28,7 @@ namespace CandB.Script.Core
         public Observable<bool> OnChangeIsTableOpen => _uiState.Only(state => state.IsTabletOpen);
         public Observable<bool> OnChangeIsPromptOpen => _uiState.Only(state => state.IsPromptOpen);
         public Observable<bool> OnChangeIsBlackCurtainOpen => _uiState.Only(state => state.IsBlackCurtainOpen);
+        public Observable<bool> OnChangeIsWhiteCurtainOpen => _uiState.Only(state => state.IsWhiteCurtainOpen);
         public Observable<string> OnChangePromptPlaceholder => _uiState.Only(state => state.PromptPlaceholder);
 
         public ReadOnlyReactiveProperty<StageState> Stage => _stageService.State;
@@ -120,6 +121,17 @@ namespace CandB.Script.Core
             }
 
             _uiState.Value = _uiState.Value.WithBlackCurtainOpen(false);
+        }
+        
+        public void OpenWhiteCurtain()
+        {
+            if (_uiState.Value.IsWhiteCurtainOpen)
+            {
+                Debug.LogWarning("WhiteCurtain is already open");
+                return;
+            }
+
+            _uiState.Value = _uiState.Value.WithWhiteCurtainOpen(true);
         }
 
         public void SetUserPromptPlaceholder(string placeholder)
