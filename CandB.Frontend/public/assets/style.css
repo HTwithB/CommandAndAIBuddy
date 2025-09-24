@@ -98,7 +98,6 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: url('https://via.placeholder.com/1920x1080.png?text=Escape+Room+Background') no-repeat center center/cover;
     position: relative;
 }
 
@@ -307,6 +306,32 @@ nav a:hover {
 #cta .cta-button {
     background-color: var(--dark-bg);
     color: var(--primary-color);
+    margin: 0 10px;
+}
+
+.cta-download-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.cta-button.windows {
+    border: 2px solid #0078d6;
+    color: #0078d6;
+}
+.cta-button.windows:hover {
+    background-color: #0078d6;
+    color: #fff;
+}
+.cta-button.mac {
+    border: 2px solid #333;
+    color: #333;
+}
+.cta-button.mac:hover {
+    background-color: #333;
+    color: #fff;
 }
 
 /* フッター */
@@ -345,6 +370,6 @@ footer {
         font-size: 1.5rem;
     }
     nav ul {
-        display: none; /* シンプルにするためSPでは非表示に */
+        display: none;
     }
 }
