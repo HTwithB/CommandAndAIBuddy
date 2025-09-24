@@ -183,9 +183,8 @@ namespace CandB.Script.Core
 ### 出力形式
 移動計画は必ず以下の要件を満たす JSON 形式のみを回答しなさい。
 1. 'instructions' キーに対してオブジェクトの配列を値として持つオブジェクトです
-2. 'ユーザーからの入力'に対してのあなたの気持ちを一言で表現して、'comment' キーの値として記載すること（ここではあなたは最良の友達として振る舞ってください）
-3. 配列内のオブジェクトは、値に '{nameof(StageService.MoveDirection.Forward)}', '{nameof(StageService.MoveDirection.Right)}', '{nameof(StageService.MoveDirection.Left)}', '{nameof(StageService.MoveDirection.Backward)}' のどれかが入る 'instruction' フィールドを持つこと、また値に歩数を数値で持つ steps フィールドを持つこと
-4. 'instructions' 配列は空であってもよいが、必ず存在すること
+2. 配列内のオブジェクトは、値に '{nameof(StageService.MoveDirection.Forward)}', '{nameof(StageService.MoveDirection.Right)}', '{nameof(StageService.MoveDirection.Left)}', '{nameof(StageService.MoveDirection.Backward)}' のどれかが入る 'instruction' フィールドを持つこと、また値に歩数を数値で持つ steps フィールドを持つこと
+3. 'instructions' 配列は空であってもよいが、必ず存在すること
 
 ### 返答例
 
@@ -232,18 +231,42 @@ STEP2) 移動に関する指示がないため、'instructions' 配列は空の�
 自然言語を理解し、バディを移動させるための指示を出す役割を担っています。
 
 ## タスク
-'あなたの考えた移動計画'と'ユーザーからのフィードバック'を読み取り、箇条書きでバディの移動計画を整理し、その後 JSON 形式で出力してください。
+'あなたが作成した間違った移動計画'と'ユーザーからのフィードバック'を読み取り、バディの移動計画を修正し、その後 JSON 形式で出力してください。
 
 ### 出力形式
 移動計画は必ず以下の要件を満たす JSON 形式のみを回答しなさい。
 1. 'instructions' キーに対してオブジェクトの配列を値として持つオブジェクトです
-2. 'ユーザーからの入力'に対してのあなたの気持ちを一言で表現して、'comment' キーの値として記載すること（ここではあなたは最良の友達として振る舞ってください）
-3. 配列内のオブジェクトは、値に '{nameof(StageService.MoveDirection.Forward)}', '{nameof(StageService.MoveDirection.Right)}', '{nameof(StageService.MoveDirection.Left)}', '{nameof(StageService.MoveDirection.Backward)}' のどれかが入る 'instruction' フィールドを持つこと、また値に歩数を数値で持つ steps フィールドを持つこと
-4. 'instructions' 配列は空であってもよいが、必ず存在すること
+2. 配列内のオブジェクトは、値に '{nameof(StageService.MoveDirection.Forward)}', '{nameof(StageService.MoveDirection.Right)}', '{nameof(StageService.MoveDirection.Left)}', '{nameof(StageService.MoveDirection.Backward)}' のどれかが入る 'instruction' フィールドを持つこと、また値に歩数を数値で持つ steps フィールドを持つこと
+3. 'instructions' 配列は空であってもよいが、必ず存在すること
+
+例1)
+移動計画:
+前に1歩進みます
+'{{""instructions"":[{{""instruction"": ""{nameof(StageService.MoveDirection.Forward)}"", ""steps"": 1}}], ""comment"": """"}}'
+
+例2)
+移動計画:
+右に10歩進みます
+'{{""instructions"":[{{""instruction"": ""{nameof(StageService.MoveDirection.Right)}"", ""steps"": 10}}], ""comment"": """"}}'
+
+例3)
+移動計画:
+左に0歩進みます or 左を向きます
+'{{""instructions"":[{{""instruction"": ""{nameof(StageService.MoveDirection.Left)}"", ""steps"": 0}}], ""comment"": """"}}'
+
+例4)
+移動計画:
+右に0歩進みます or 右を向きます
+'{{""instructions"":[{{""instruction"": ""{nameof(StageService.MoveDirection.Right)}"", ""steps"": 0}}], ""comment"": """"}}'
+
+例5)
+移動計画:
+後ろに0歩進みます or 後ろを向きます
+'{{""instructions"":[{{""instruction"": ""{nameof(StageService.MoveDirection.Backward)}"", ""steps"": 0}}], ""comment"": """"}}'
 
 {feedback ?? ""}
 
-## フィードバックを元に再構築した出力
+## あなたが修正した移動計画の出力:
 ";
 
             // feedback があればそれも含める
@@ -306,15 +329,16 @@ STEP2) 移動に関する指示がないため、'instructions' 配列は空の�
                         // feedback を元に move plan を再生成し、再度ユーザー確認へ
                         string? feedbackText = (result.feedback != null)
                             ? $@"
-## あなたの考えた移動計画
+## あなたが作成した間違った移動計画
 {responseMessage.Split('\n', StringSplitOptions.RemoveEmptyEntries)
     .Skip(1)
     .Aggregate((a, b) => a + "\n" + b)}
+{(movePlan != null ? movePlan.ToInstructionsString() : string.Empty)}
 
 ## ユーザーからのフィードバック
 {result.feedback}
 
-必ず 'あなたの考えた移動計画' を 'ユーザーからのフィードバック' を元に適切に修正して出力してください。"
+必ず 'あなたが作成した間違った移動計画' を 'ユーザーからのフィードバック' を元に必ず修正して出力してください。"
                             : null;
                         Debug.LogFormat("UserPromptService:ProcessUserPrompt: recreate move plan with feedback {0}",
                             feedbackText);
@@ -440,7 +464,7 @@ root ::= ""{{\""instructions\"": ["" ( instruction ("","" instruction){{0,4}} )?
 instruction ::= ""{{\""instruction\"":"" instruction-val "", \""steps\"":"" number ""}}""
 instruction-val ::= (""\""{nameof(StageService.MoveDirection.Forward)}\"""" | ""\""{nameof(StageService.MoveDirection.Right)}\"""" | ""\""{nameof(StageService.MoveDirection.Left)}\"""" | ""\""{nameof(StageService.MoveDirection.Backward)}\"""")
 number ::= [0-9]+
-comment-string ::= [^\n}}""\\<>]{{0,40}}
+comment-string ::= [^\n}}""\\<>]{{0,0}}
 ");
             var movePlanningText = "";
             await _llmGateway.Chat(CreateMovePlanningPrompt(prompt, feedback),
